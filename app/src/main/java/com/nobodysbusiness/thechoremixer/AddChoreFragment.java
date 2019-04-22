@@ -39,7 +39,6 @@ public class AddChoreFragment extends Fragment {
         durationSeekBar = view.findViewById(R.id.durationSeekBar);
         durationTextView = view.findViewById(R.id.durationTextView);
         choreEditText = view.findViewById(R.id.choreEditText);
-        db = Room.databaseBuilder(getActivity(), ChoreDatabase.class,"chore-db").fallbackToDestructiveMigration().build();
         durationSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -69,18 +68,13 @@ public class AddChoreFragment extends Fragment {
                     Toast.makeText(getActivity(), "Please Enter a Chore!", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    final Chore chore = new Chore();
+                    Chore chore = new Chore();
                     Date date = Calendar.getInstance().getTime();
                     SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy", Locale.getDefault());
                     chore.setName(choreEditText.getText().toString());
                     chore.setDuration(durationTextView.getText().toString());
                     chore.setDate(df.format(date));
-                    new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            db.getChoreDAO().insertSingle(chore);
-                        }
-                    }).start();
+                    ((MainActivity)getActivity()).addChore(chore);
                     choreEditText.getText().clear();
 
                 }

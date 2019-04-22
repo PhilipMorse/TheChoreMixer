@@ -23,7 +23,8 @@
         android:maxLines="1"
         android:ellipsize="end"
         android:id="@+id/taskTextView"
-        android:background="@android:color/background_light"/>
+        android:background="@android:color/background_light"
+        android:textColor="@android:color/background_dark"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

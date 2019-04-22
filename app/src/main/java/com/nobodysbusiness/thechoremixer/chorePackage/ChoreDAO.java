@@ -20,5 +20,8 @@ public interface ChoreDAO {
     @Query("SELECT * FROM chore")
     public List<Chore> getAllChores();
 
+    @Query("SELECT * FROM chore ORDER BY RANDOM() LIMIT 1")
+    public Chore[] getRandomChore();
+
 
 }
