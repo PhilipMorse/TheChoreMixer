@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/generateChoreButton"
+        android:layout_above="@+id/taskTextView"
+        android:layout_centerHorizontal="true"
+        android:text="Generate Chore"
+        android:textSize="16sp"
+        android:padding="16dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_centerInParent="true"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:hint="Generate a New Chore"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:id="@+id/taskTextView"
+        android:background="@android:color/background_light"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/completeChoreButton"
+        android:layout_below="@+id/taskTextView"
+        android:layout_centerHorizontal="true"
+        android:text="Complete Chore"
+        android:textSize="16sp"
+        android:padding="16dp"/>
+
+</RelativeLayout>
