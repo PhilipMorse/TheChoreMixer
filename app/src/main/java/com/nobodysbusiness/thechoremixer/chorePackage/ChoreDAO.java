@@ -12,8 +12,10 @@ import java.util.List;
 public interface ChoreDAO {
     @Insert
     public void insertSingle(Chore... chores);
+
     @Update
     public void update(Chore... chores);
+
     @Delete
     public void delete(Chore... chores);
 

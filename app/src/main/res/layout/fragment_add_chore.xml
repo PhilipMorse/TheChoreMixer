@@ -6,69 +6,68 @@
     android:padding="16dp">
 
     <TextView
+        android:id="@+id/choreName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Chore:"
-        android:id="@+id/choreName"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/choreEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/choreName"
         android:ems="16"
-        android:inputType="textCapWords"
-        android:layout_below="@+id/choreName"/>
+        android:inputType="textCapWords" />
 
     <TextView
+        android:id="@+id/durationName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Chore Duration:"
-        android:id="@+id/durationName"
-        android:textStyle="bold"
         android:layout_below="@+id/choreEditText"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        android:text="Chore Duration:"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/durationTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Short"
-        android:layout_alignBottom="@+id/durationName"
         android:layout_alignTop="@+id/durationName"
+        android:layout_alignBottom="@+id/durationName"
+        android:layout_marginStart="8dp"
         android:layout_toEndOf="@+id/durationName"
-        android:layout_marginStart="8dp"/>
+        android:text="Short" />
 
     <SeekBar
         android:id="@+id/durationSeekBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:max="2"
         android:layout_below="@id/durationTextView"
-        android:layout_margin="16dp"/>
+        android:layout_margin="16dp"
+        android:max="2" />
 
     <TextView
+        android:id="@+id/tagsName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:text="Tags:"
         android:layout_below="@+id/durationSeekBar"
         android:layout_marginTop="16dp"
-        android:id="@+id/tagsName"/>
+        android:text="Tags:"
+        android:textStyle="bold" />
 
     <ListView
+        android:id="@+id/tagListView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tagsName"
-        android:id="@+id/tagListView"
-        android:layout_above="@+id/submitButton"></ListView>
+        android:layout_above="@+id/submitButton"
+        android:layout_below="@id/tagsName"></ListView>
 
     <Button
         android:id="@+id/submitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Submit"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_margin="16dp"/>
+        android:text="Submit" />
 </RelativeLayout>

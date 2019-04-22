@@ -29,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = findViewById(R.id.tabs);
 
         tabLayout.setupWithViewPager(mViewPager);
-        db = Room.databaseBuilder(this, ChoreDatabase.class,"chore-db").fallbackToDestructiveMigration().build();
+        db = Room.databaseBuilder(this, ChoreDatabase.class, "chore-db").fallbackToDestructiveMigration().build();
     }
 
-    private void setupViewPager(ViewPager viewPager){
+    private void setupViewPager(ViewPager viewPager) {
         UserMainTabAdapter adapter = new UserMainTabAdapter(getSupportFragmentManager());
         adapter.addFragment(new GenerateChoreFragment(), "Generate");
         adapter.addFragment(new AddChoreFragment(), "Add");
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void addChore(final Chore chore){
+    public void addChore(final Chore chore) {
 
         new Thread(new Runnable() {
             @Override
@@ -50,11 +50,11 @@ public class MainActivity extends AppCompatActivity {
         }).start();
     }
 
-    public Chore[] generateChore(){
+    public Chore[] generateChore() {
         return db.getChoreDAO().getRandomChore();
     }
 
-    public void deleteCurrentChore(Chore chore){
+    public void deleteCurrentChore(Chore chore) {
         db.getChoreDAO().delete(chore);
     }
 }

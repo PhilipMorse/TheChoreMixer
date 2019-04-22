@@ -1,6 +1,5 @@
 package com.nobodysbusiness.thechoremixer;
 
-import android.arch.persistence.room.Room;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -15,7 +14,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.nobodysbusiness.thechoremixer.chorePackage.Chore;
-import com.nobodysbusiness.thechoremixer.chorePackage.ChoreDAO;
 import com.nobodysbusiness.thechoremixer.chorePackage.ChoreDatabase;
 
 import java.text.SimpleDateFormat;
@@ -42,11 +40,11 @@ public class AddChoreFragment extends Fragment {
         durationSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                if (progress==0){
+                if (progress == 0) {
                     durationTextView.setText("Short");
-                }else if (progress==1){
+                } else if (progress == 1) {
                     durationTextView.setText("Medium");
-                }else if (progress==2){
+                } else if (progress == 2) {
                     durationTextView.setText("Long");
                 }
             }
@@ -64,17 +62,16 @@ public class AddChoreFragment extends Fragment {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (choreEditText.getText().toString().trim().length() == 0){
+                if (choreEditText.getText().toString().trim().length() == 0) {
                     Toast.makeText(getActivity(), "Please Enter a Chore!", Toast.LENGTH_SHORT).show();
-                }
-                else{
+                } else {
                     Chore chore = new Chore();
                     Date date = Calendar.getInstance().getTime();
                     SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy", Locale.getDefault());
                     chore.setName(choreEditText.getText().toString());
                     chore.setDuration(durationTextView.getText().toString());
                     chore.setDate(df.format(date));
-                    ((MainActivity)getActivity()).addChore(chore);
+                    ((MainActivity) getActivity()).addChore(chore);
                     choreEditText.getText().clear();
 
                 }
