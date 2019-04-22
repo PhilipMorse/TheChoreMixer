@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager){
         UserMainTabAdapter adapter = new UserMainTabAdapter(getSupportFragmentManager());
-        adapter.addFragment(new GenerateChoreFragment(), "New Chore");
+        adapter.addFragment(new GenerateChoreFragment(), "Generate");
+        adapter.addFragment(new AddChoreFragment(), "Add");
         viewPager.setAdapter(adapter);
 
     }

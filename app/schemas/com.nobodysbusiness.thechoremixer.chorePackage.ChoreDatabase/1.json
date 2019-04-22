@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "e381d5b832e2c27c7b0a6e7bf252bc1f",
+    "identityHash": "1225b4071c6ac079c81d7b4b955e17ff",
     "entities": [
       {
         "tableName": "chore",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT, `tag1` TEXT, `tag2` TEXT, `tag3` TEXT, `duration` TEXT, `date` TEXT, `expiryDate` TEXT, `status` INTEGER, `key` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT, `tag1` TEXT, `tag2` TEXT, `tag3` TEXT, `duration` TEXT, `date` TEXT, `status` INTEGER, `key` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
             "fieldPath": "name",
@@ -45,12 +45,6 @@
             "notNull": false
           },
           {
-            "fieldPath": "expiryDate",
-            "columnName": "expiryDate",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
             "fieldPath": "status",
             "columnName": "status",
             "affinity": "INTEGER",
@@ -75,7 +69,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"e381d5b832e2c27c7b0a6e7bf252bc1f\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"1225b4071c6ac079c81d7b4b955e17ff\")"
     ]
   }
 }

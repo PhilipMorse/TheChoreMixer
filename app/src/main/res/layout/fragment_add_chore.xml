@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chore:"
+        android:id="@+id/choreName"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/choreEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="16"
+        android:inputType="textCapWords"
+        android:layout_below="@+id/choreName"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chore Duration:"
+        android:id="@+id/durationName"
+        android:textStyle="bold"
+        android:layout_below="@+id/choreEditText"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/durationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Short"
+        android:layout_alignBottom="@+id/durationName"
+        android:layout_alignTop="@+id/durationName"
+        android:layout_toEndOf="@+id/durationName"
+        android:layout_marginStart="8dp"/>
+
+    <SeekBar
+        android:id="@+id/durationSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="2"
+        android:layout_below="@id/durationTextView"
+        android:layout_margin="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Tags:"
+        android:layout_below="@+id/durationSeekBar"
+        android:layout_marginTop="16dp"
+        android:id="@+id/tagsName"/>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tagsName"
+        android:id="@+id/tagListView"
+        android:layout_above="@+id/submitButton"></ListView>
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="16dp"/>
+</RelativeLayout>
