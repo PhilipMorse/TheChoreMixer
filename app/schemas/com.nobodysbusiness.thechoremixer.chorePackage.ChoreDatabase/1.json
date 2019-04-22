@@ -2,12 +2,18 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "1225b4071c6ac079c81d7b4b955e17ff",
+    "identityHash": "3e78dbbfb196b6c51562403ae1394d13",
     "entities": [
       {
         "tableName": "chore",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT, `tag1` TEXT, `tag2` TEXT, `tag3` TEXT, `duration` TEXT, `date` TEXT, `status` INTEGER, `key` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`key` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT, `tag1` TEXT, `tag2` TEXT, `tag3` TEXT, `duration` TEXT, `date` TEXT, `status` INTEGER)",
         "fields": [
+          {
+            "fieldPath": "key",
+            "columnName": "key",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
           {
             "fieldPath": "name",
             "columnName": "name",
@@ -49,12 +55,6 @@
             "columnName": "status",
             "affinity": "INTEGER",
             "notNull": false
-          },
-          {
-            "fieldPath": "key",
-            "columnName": "key",
-            "affinity": "INTEGER",
-            "notNull": false
           }
         ],
         "primaryKey": {
@@ -69,7 +69,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"1225b4071c6ac079c81d7b4b955e17ff\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"3e78dbbfb196b6c51562403ae1394d13\")"
     ]
   }
 }

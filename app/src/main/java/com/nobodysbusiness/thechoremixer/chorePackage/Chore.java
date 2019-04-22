@@ -7,20 +7,10 @@ import android.support.annotation.NonNull;
 @Entity(tableName = "chore")
 public class Chore {
 
-    private String name, tag1, tag2, tag3, duration, date;
-    private Boolean status;
     @PrimaryKey(autoGenerate = true)
-    private Integer key;
-
-//    public Chore(String name, String tag1, String tag2, String tag3, String duration, String date, String expiryDate, Boolean status) {
-//        this.name = name;
-//        this.tag1 = tag1;
-//        this.tag2 = tag2;
-//        this.tag3 = tag3;
-//        this.duration = duration;
-//        this.date = date;
-//        this.status = status;
-//    }
+    private int key;
+    private String name, tag1, tag2, tag3, duration = "Short", date;
+    private Boolean status = false;
 
     public String getName() {
         return name;
@@ -78,13 +68,11 @@ public class Chore {
         this.status = status;
     }
 
-    @NonNull
-    public Integer getKey() {
+    public int getKey() {
         return key;
     }
 
-    @NonNull
-    public void setKey(Integer key) {
+    public void setKey(int key) {
         this.key = key;
     }
 
